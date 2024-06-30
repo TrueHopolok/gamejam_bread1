@@ -1,0 +1,82 @@
+[gd_scene load_steps=16 format=3 uid="uid://cv6sfmq3e86db"]
+
+[ext_resource type="PackedScene" uid="uid://cb0ghvmgyn6ft" path="res://scenes/player.tscn" id="1_lpt0y"]
+[ext_resource type="Script" path="res://scripts/ui/infinite_music.gd" id="1_wnt63"]
+[ext_resource type="PackedScene" uid="uid://dop166ea6pboo" path="res://scenes/hud.tscn" id="2_rm6cy"]
+[ext_resource type="PackedScene" uid="uid://b1htxje5u4s1" path="res://scenes/interactables/musicbox.tscn" id="3_iuxkb"]
+[ext_resource type="PackedScene" uid="uid://bo60bdee6rt7" path="res://scenes/gameover.tscn" id="3_qdhgo"]
+[ext_resource type="PackedScene" uid="uid://gr27pe4pva7e" path="res://scenes/laborotory.tscn" id="4_2yd8y"]
+[ext_resource type="PackedScene" uid="uid://db1cj22ikg7ij" path="res://scenes/interactables/bottle.tscn" id="6_8kawm"]
+[ext_resource type="PackedScene" uid="uid://c8vrvrx05jvrh" path="res://scenes/interactables/crane.tscn" id="7_61qn1"]
+[ext_resource type="PackedScene" uid="uid://bm0fsqcjbwqyu" path="res://scenes/interactables/smokers.tscn" id="8_n0e4e"]
+[ext_resource type="PackedScene" uid="uid://e3tmvhghcbl3" path="res://scenes/interactables/target.tscn" id="9_q8hab"]
+[ext_resource type="PackedScene" uid="uid://bmitm47ipdqo8" path="res://scenes/interactables/agro.tscn" id="10_vdw1u"]
+[ext_resource type="PackedScene" uid="uid://cah15lhqtj725" path="res://scenes/interactables/bar_man.tscn" id="11_xx1ef"]
+[ext_resource type="PackedScene" uid="uid://4ten5v0xff04" path="res://scenes/interactables/drink.tscn" id="12_tn6rb"]
+[ext_resource type="PackedScene" uid="uid://bb41cyl7cjwbv" path="res://scenes/interactables/bar_table.tscn" id="13_aira8"]
+[ext_resource type="PackedScene" uid="uid://jvpuoytugh1x" path="res://scenes/interactables/cleaner.tscn" id="14_x826r"]
+
+[node name="Bar" type="Node2D"]
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="." groups=["Music"]]
+script = ExtResource("1_wnt63")
+
+[node name="Laboroty" parent="." instance=ExtResource("4_2yd8y")]
+
+[node name="HUD" parent="." instance=ExtResource("2_rm6cy")]
+
+[node name="GameOver" parent="." instance=ExtResource("3_qdhgo")]
+
+[node name="Player" parent="." instance=ExtResource("1_lpt0y")]
+position = Vector2(-40, 294)
+
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(248, 10)
+
+[node name="Musicbox" parent="." instance=ExtResource("3_iuxkb")]
+position = Vector2(704, 352)
+scale = Vector2(7.76, 9.59)
+
+[node name="Bottle" parent="." instance=ExtResource("6_8kawm")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(153, 279)
+scale = Vector2(1.013, 3.66)
+
+[node name="Crane" parent="." instance=ExtResource("7_61qn1")]
+position = Vector2(57, 267)
+scale = Vector2(5.995, 5.995)
+
+[node name="Smokers" parent="." instance=ExtResource("8_n0e4e")]
+modulate = Color(0.985074, 0, 0.323411, 1)
+position = Vector2(286, 288)
+scale = Vector2(3.835, 3.835)
+
+[node name="Target" parent="." instance=ExtResource("9_q8hab")]
+modulate = Color(0.952941, 0.239216, 0.290196, 1)
+position = Vector2(378, 284)
+scale = Vector2(2.595, 2.595)
+
+[node name="Agro" parent="." instance=ExtResource("10_vdw1u")]
+position = Vector2(504, 283)
+scale = Vector2(6.185, 2.205)
+
+[node name="BarMan" parent="." instance=ExtResource("11_xx1ef")]
+position = Vector2(1097, 218)
+
+[node name="Marker2D" type="Marker2D" parent="BarMan"]
+position = Vector2(-817, -122)
+
+[node name="Drink" parent="." instance=ExtResource("12_tn6rb")]
+position = Vector2(1037, 211)
+scale = Vector2(1.385, 2.085)
+
+[node name="BarTable" parent="." instance=ExtResource("13_aira8")]
+position = Vector2(1096, 269)
+scale = Vector2(8.145, 3.16)
+
+[node name="Cleaner" parent="." instance=ExtResource("14_x826r")]
+position = Vector2(930, 269)
+scale = Vector2(3.28, 3.28)
+
+[node name="Marker2D" type="Marker2D" parent="Cleaner"]
+position = Vector2(-117.683, -47.8659)

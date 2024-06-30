@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb0ghvmgyn6ft"]
+
+[ext_resource type="Texture2D" uid="uid://cvefuslram18s" path="res://textures/temp.png" id="1_4nu2w"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_bmi76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5soxm"]
+size = Vector2(49, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8fds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4nu2w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4nu2w")
+}],
+"loop": true,
+"name": &"interact",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4nu2w")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4nu2w")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+z_index = 1
+script = ExtResource("1_bmi76")
+entering_time = 90
+border_vector = Vector2(40, 1112)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_5soxm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u8fds")
+animation = &"idle"

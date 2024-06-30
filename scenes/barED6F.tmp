@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv6sfmq3e86db"]
+
+[ext_resource type="PackedScene" uid="uid://cb0ghvmgyn6ft" path="res://scenes/player.tscn" id="1_lpt0y"]
+[ext_resource type="PackedScene" uid="uid://dop166ea6pboo" path="res://scenes/hud.tscn" id="2_rm6cy"]
+[ext_resource type="PackedScene" uid="uid://b1htxje5u4s1" path="res://scenes/interactables/musicbox.tscn" id="3_iuxkb"]
+[ext_resource type="AudioStream" uid="uid://bsj11ywcdigon" path="res://sounds/temp_none.wav" id="4_ayou6"]
+[ext_resource type="Script" path="res://scripts/infinite_music.gd" id="5_1ijtt"]
+[ext_resource type="PackedScene" uid="uid://db1cj22ikg7ij" path="res://scenes/interactables/bottle.tscn" id="6_8kawm"]
+[ext_resource type="PackedScene" uid="uid://c8vrvrx05jvrh" path="res://scenes/interactables/crane.tscn" id="7_61qn1"]
+[ext_resource type="PackedScene" uid="uid://bm0fsqcjbwqyu" path="res://scenes/interactables/smokers.tscn" id="8_n0e4e"]
+
+[node name="Bar" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_lpt0y")]
+position = Vector2(195, 300)
+
+[node name="HUD" parent="." instance=ExtResource("2_rm6cy")]
+
+[node name="Musicbox" parent="." instance=ExtResource("3_iuxkb")]
+position = Vector2(661, 253)
+scale = Vector2(12.36, 12.36)
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="." groups=["Music"]]
+stream = ExtResource("4_ayou6")
+script = ExtResource("5_1ijtt")
+
+[node name="Bottle" parent="." instance=ExtResource("6_8kawm")]
+position = Vector2(402, 274)
+scale = Vector2(0.873442, 3.15375)
+
+[node name="Crane" parent="." instance=ExtResource("7_61qn1")]
+position = Vector2(57, 267)
+scale = Vector2(5.995, 5.995)
+
+[node name="Smokers" parent="." instance=ExtResource("8_n0e4e")]
+position = Vector2(286, 288)

@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://dop166ea6pboo"]
+
+[ext_resource type="Texture2D" uid="uid://dlfcsob0qwwwj" path="res://textures/temp_square.png" id="2_8hxky"]
+[ext_resource type="Theme" uid="uid://csy0as4wjmt84" path="res://others/main_theme.tres" id="2_tl2v0"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_sprite.gd" id="3_mbqfo"]
+[ext_resource type="Script" path="res://scripts/ui/timer_text.gd" id="4_xdp3q"]
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Background" type="ColorRect" parent="."]
+offset_top = 448.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Line" type="ColorRect" parent="."]
+offset_left = 200.0
+offset_top = 448.0
+offset_right = 216.0
+offset_bottom = 648.0
+color = Color(1, 0, 0, 0.207843)
+metadata/_edit_lock_ = true
+
+[node name="Line2" type="ColorRect" parent="."]
+offset_left = 952.0
+offset_top = 448.0
+offset_right = 968.0
+offset_bottom = 648.0
+color = Color(1, 0, 0, 0.207843)
+metadata/_edit_lock_ = true
+
+[node name="InventoryTitle" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 456.0
+offset_right = 183.0
+offset_bottom = 536.0
+theme = ExtResource("2_tl2v0")
+theme_override_font_sizes/font_size = 32
+text = "Invetory:"
+horizontal_alignment = 1
+
+[node name="InventorySprite" type="Sprite2D" parent="."]
+position = Vector2(96, 552)
+scale = Vector2(6, 6)
+texture = ExtResource("2_8hxky")
+script = ExtResource("3_mbqfo")
+
+[node name="TextNode" type="RichTextLabel" parent="." groups=["TextWindow"]]
+offset_left = 224.0
+offset_top = 456.0
+offset_right = 944.0
+offset_bottom = 640.0
+theme = ExtResource("2_tl2v0")
+bbcode_enabled = true
+scroll_following = true
+
+[node name="TitleTimerText" type="Label" parent="."]
+offset_left = 976.0
+offset_top = 456.0
+offset_right = 1143.0
+offset_bottom = 536.0
+theme = ExtResource("2_tl2v0")
+theme_override_font_sizes/font_size = 32
+text = "Time left:"
+horizontal_alignment = 1
+
+[node name="CountTimerText" type="Label" parent="."]
+offset_left = 976.0
+offset_top = 496.0
+offset_right = 1143.0
+offset_bottom = 640.0
+theme = ExtResource("2_tl2v0")
+theme_override_font_sizes/font_size = 96
+text = "60"
+horizontal_alignment = 1
+script = ExtResource("4_xdp3q")
+
+[node name="MusicMuteButton" type="TextureButton" parent="."]
+offset_left = 1096.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 48.0

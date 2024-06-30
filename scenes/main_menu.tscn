@@ -1,0 +1,98 @@
+[gd_scene load_steps=19 format=3 uid="uid://cnb8p2kjckdhl"]
+
+[ext_resource type="Texture2D" uid="uid://b3lttnl5unq4i" path="res://textures/mainmenu/bg.png" id="1_ndtum"]
+[ext_resource type="Theme" uid="uid://csy0as4wjmt84" path="res://others/main_theme.tres" id="2_wcsln"]
+[ext_resource type="Texture2D" uid="uid://cnfre2exqj0v" path="res://textures/mainmenu/level1_normal.png" id="3_88dlb"]
+[ext_resource type="Texture2D" uid="uid://ctid0tg3s7doj" path="res://textures/mainmenu/level1_pressed.png" id="4_88pfl"]
+[ext_resource type="Texture2D" uid="uid://dvq6jms1i7yq4" path="res://textures/mainmenu/level1_hover.png" id="5_3eux1"]
+[ext_resource type="Script" path="res://scripts/ui/level_select_button.gd" id="6_tp0b3"]
+[ext_resource type="Texture2D" uid="uid://bej4pwongj848" path="res://textures/mainmenu/level2_normal.png" id="7_8ipl5"]
+[ext_resource type="Texture2D" uid="uid://5wr7suxypqps" path="res://textures/mainmenu/level2_pressed.png" id="8_vqanl"]
+[ext_resource type="Texture2D" uid="uid://bh7iim2pje5w6" path="res://textures/mainmenu/level2_hover.png" id="9_ip8o2"]
+[ext_resource type="Texture2D" uid="uid://bdx5oyqmm3h7y" path="res://textures/mainmenu/level3_normal.png" id="10_bplx4"]
+[ext_resource type="Texture2D" uid="uid://b64owatxmab3y" path="res://textures/mainmenu/level3_pressed.png" id="11_8cfnu"]
+[ext_resource type="Texture2D" uid="uid://cl6oa65rlm0r3" path="res://textures/mainmenu/level3_hover.png" id="12_8or2y"]
+[ext_resource type="Texture2D" uid="uid://dnntf6won0fq5" path="res://textures/mainmenu/level4_normal.png" id="13_ylnef"]
+[ext_resource type="Texture2D" uid="uid://d2egec0l72ham" path="res://textures/mainmenu/level4_pressed.png" id="14_msyho"]
+[ext_resource type="Texture2D" uid="uid://b1m3efvp5o86i" path="res://textures/mainmenu/level4_hover.png" id="15_h6pcn"]
+[ext_resource type="Texture2D" uid="uid://b88j62n237qr0" path="res://textures/mainmenu/level5_normal.png" id="16_876sw"]
+[ext_resource type="Texture2D" uid="uid://dxdueswwcujjk" path="res://textures/mainmenu/level5_pressed.png" id="17_oycsy"]
+[ext_resource type="Texture2D" uid="uid://i3s0qhcln6gl" path="res://textures/mainmenu/level5_hover.png" id="18_glrqq"]
+
+[node name="MainMenu" type="CanvasLayer"]
+metadata/_edit_horizontal_guides_ = [-207.0]
+
+[node name="MainMenuBackGround" type="Sprite2D" parent="."]
+position = Vector2(576, 325.44)
+scale = Vector2(3.66879, 2.88)
+texture = ExtResource("1_ndtum")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 152.0
+offset_right = 960.0
+offset_bottom = 288.0
+theme = ExtResource("2_wcsln")
+theme_override_font_sizes/font_size = 96
+text = "Project Bread"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level1" type="TextureButton" parent="."]
+offset_left = 224.0
+offset_top = 320.0
+offset_right = 424.0
+offset_bottom = 420.0
+focus_mode = 0
+texture_normal = ExtResource("3_88dlb")
+texture_pressed = ExtResource("4_88pfl")
+texture_hover = ExtResource("5_3eux1")
+script = ExtResource("6_tp0b3")
+
+[node name="Level2" type="TextureButton" parent="."]
+offset_left = 472.0
+offset_top = 320.0
+offset_right = 672.0
+offset_bottom = 420.0
+focus_mode = 0
+texture_normal = ExtResource("7_8ipl5")
+texture_pressed = ExtResource("8_vqanl")
+texture_hover = ExtResource("9_ip8o2")
+script = ExtResource("6_tp0b3")
+loaded_level = 2
+
+[node name="Level3" type="TextureButton" parent="."]
+offset_left = 736.0
+offset_top = 320.0
+offset_right = 936.0
+offset_bottom = 420.0
+focus_mode = 0
+texture_normal = ExtResource("10_bplx4")
+texture_pressed = ExtResource("11_8cfnu")
+texture_hover = ExtResource("12_8or2y")
+script = ExtResource("6_tp0b3")
+loaded_level = 3
+
+[node name="Level4" type="TextureButton" parent="."]
+offset_left = 344.0
+offset_top = 448.0
+offset_right = 544.0
+offset_bottom = 548.0
+focus_mode = 0
+texture_normal = ExtResource("13_ylnef")
+texture_pressed = ExtResource("14_msyho")
+texture_hover = ExtResource("15_h6pcn")
+script = ExtResource("6_tp0b3")
+loaded_level = 4
+
+[node name="Level5" type="TextureButton" parent="."]
+offset_left = 608.0
+offset_top = 448.0
+offset_right = 808.0
+offset_bottom = 548.0
+focus_mode = 0
+texture_normal = ExtResource("16_876sw")
+texture_pressed = ExtResource("17_oycsy")
+texture_hover = ExtResource("18_glrqq")
+script = ExtResource("6_tp0b3")
+loaded_level = 5
