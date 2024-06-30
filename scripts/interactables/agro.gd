@@ -47,7 +47,7 @@ func interacted():
 		Global.game_pause()
 		is_interactable = false
 		await Global.text_append(
-			"> [color=green]???:[/color] Ugh...    go **** yourself",
+			"> [color=green]???:[/color] Ugh...   go **** yourself",
 			0.1
 		)
 		Global.game_resume()
