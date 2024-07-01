@@ -3,10 +3,10 @@ extends Interactable
 var text : Array[String] = \
 [
 "> [color=purple]Bartender:[/color] What are you doing?.. Don't hurt me... ",
-"> [color=yellow]MC:[/color] Be quiet. I won't hesitate. Give me a pin to unlock a [color=red]gun[/color].",
-"After some interegation, the only 2 things you were able in time to get is:",
-"[color=aqua]Cleaner[/color] also knows a code",
-"[color=orange]4[/color] is first digit of the pin",
+"> [color=yellow]MC:[/color] Be quiet. I won't hesitate to use [color=green]this[/color]. Give me a [color=orange]pin[/color] to unlock a [color=red]gun[/color].",
+"After some interegation, the only 2 things you were able in time to get are:",
+"1) [color=orange]4 and 6[/color] are the first two digits of the pin",
+"2) [color=aqua]Janitor[/color] also knows a code",
 ]
 
 @export var run_time : int = 300
@@ -43,7 +43,7 @@ func ending():
 		await Global.text_append(line, 0.04)
 		await get_tree().create_timer(0.7).timeout
 	await get_tree().create_timer(1.0).timeout
-	Global.game_over(true, "LEVEL COMPLETED?")
+	Global.game_over()
 
 func interacted():
 	Global.game_pause()

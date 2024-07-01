@@ -5,6 +5,9 @@ func _ready():
 	is_interactable = Global.current_level != 1
 
 func interacted():
+	Global.game_pause()
+	get_tree().get_first_node_in_group("Pincode").visible = true
+	return
 	match Global.current_level:
 		3:
 			if Global.inventory_item != 1:
@@ -17,7 +20,7 @@ func interacted():
 				)
 			elif Global.info.cleaner_cleaning:
 				Global.text_append(
-					"[color=yellow]Wait[/color] for [color=aqua]cleaner[/color] to go away"
+					"[color=yellow]Wait[/color] for [color=aqua]janitor[/color] to go away"
 				)
 			else:
 				Global.info.agro_bottle_broken = true
@@ -29,7 +32,7 @@ func interacted():
 		2:
 			if Global.info.cleaner_cleaning:
 				Global.text_append(
-					"Good idea to [color=aqua]flood[/color] the toilets, but maybe try to [color=yellow]wait[/color] for [color=aqua]cleaner[/color] to go away"
+					"Good idea to [color=aqua]flood[/color] the toilets, but maybe try to [color=yellow]wait[/color] for [color=aqua]janitor[/color] to go away"
 				)
 			else:
 				Global.info.flooded = true

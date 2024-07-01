@@ -1,5 +1,12 @@
 extends Interactable
 
+var text : Array[String] = \
+[
+"> [color=yellow]MC:[/color] Better be smart and give me a [color=orange]pin[/color] code for a safe.",
+"> [color=aqua]Janitor:[/color] ****, okay. Just don't use that thing.",
+"> [color=aqua]Janitor:[/color] Last two digits of pin are [color=orange]2 and 9[/color]."
+]
+
 @export var run_time : int = 300
 @onready var exit_marker : Marker2D = $Marker2D
 var run_speed : float
@@ -47,9 +54,11 @@ func interacted():
 		)
 	elif Global.inventory_item == 5:
 		Global.game_pause()
-		Global.text_append(
-			"ENDING 5.cleaner"
-		)
+		for line in text:
+			await Global.text_append(line, 0.04)
+			await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(1.0).timeout
+		Global.game_over()
 	else:
 		Global.text_append(
 			"Maybe try to make [color=orange]something[/orange] instead of disturbing [color=aqua]him[/color]"

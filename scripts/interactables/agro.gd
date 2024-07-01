@@ -3,7 +3,7 @@ extends Interactable
 var text : Array[String] = \
 [
 "> [color=green]???:[/color] Hey ****, that's my bottle",
-"This person even though is drunk, still is stronger then you... [color=red]Fail[/color]...",
+"This person even though is drunk, still is stronger then you... [color=red]Failure[/color]...",
 ]
 
 func _process(_delta):
@@ -40,7 +40,7 @@ func interacted():
 			"Even though plan didn't work, this whole situation was really useful. [color=purple]Bartender[/color] has a [color=red]gun[/color].",
 			0.04
 		)
-		await get_tree().create_timer(1.7).timeout
+		await get_tree().create_timer(2.5).timeout
 		Global.save_progress(5)
 		Global.game_over(true, "LEVEL COMPLETED?")
 	else:

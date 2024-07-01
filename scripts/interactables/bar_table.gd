@@ -28,9 +28,11 @@ func interacted():
 	elif Global.current_level == 5:
 		Global.game_pause()
 		await get_tree().create_timer(0.05).timeout
-		Global.text_append(
-			"ENDING 5.guesscode"
+		await Global.text_append(
+			"The [color=red]gun[/color] is in a safe with [color=orange]pin code[/color].",
+			0.03
 		)
+		get_tree().get_first_node_in_group("Pincode").visible = true
 	else:
 		await get_tree().create_timer(0.05).timeout
 		Global.text_append(

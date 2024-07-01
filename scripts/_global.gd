@@ -57,21 +57,16 @@ func game_resume():
 func game_over(completed : bool = false, reason : String = "TIME IS UP"):
 	game_paused = true
 	timer.paused = true
-	var gameover_scene : CanvasLayer = get_tree().get_first_node_in_group("GameoverScreen")
-	gameover_scene.visible = true
-	var gameover_title : Label = get_tree().get_first_node_in_group("GameoverTitle")
-	gameover_title.text = "GAMEOVER: " + reason
-	var gameover_button : Button = get_tree().get_first_node_in_group("GameoverNextlevel")
-	gameover_button.disabled = !completed
-	var gameover_animation : AnimationPlayer = get_tree().get_first_node_in_group("GameoverAnimation")
-	gameover_animation.play("fade_to_black")
+	get_tree().get_first_node_in_group("GameoverScreen").visible = true
+	get_tree().get_first_node_in_group("GameoverTitle").text = "GAMEOVER: " + reason
+	get_tree().get_first_node_in_group("GameoverNextlevel").disabled = !completed
+	get_tree().get_first_node_in_group("GameoverAnimation").play("fade_to_black")
 
 func game_start():
 	for child in get_tree().get_root().get_children():
 		if child.name != "Global": child.queue_free()
 	get_tree().get_root().add_child(prefab_game.instantiate())
-	var gameover_scene : CanvasLayer = get_tree().get_first_node_in_group("GameoverScreen")
-	gameover_scene.visible = false
+	get_tree().get_first_node_in_group("GameoverScreen").visible = false
 	text_clear()
 	game_paused = true
 	timer.paused = true

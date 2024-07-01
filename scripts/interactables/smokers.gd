@@ -11,7 +11,7 @@ func interacted():
 			)
 			await get_tree().create_timer(0.5).timeout
 			await Global.text_append(
-				"> [color=brown]???:[/color] Sure",
+				"> [color=brown]???:[/color] Sure.",
 				0.03
 			)
 			await get_tree().create_timer(0.5).timeout
