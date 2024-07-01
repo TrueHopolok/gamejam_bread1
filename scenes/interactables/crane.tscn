@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8vrvrx05jvrh"]
+[gd_scene load_steps=14 format=3 uid="uid://c8vrvrx05jvrh"]
 
 [ext_resource type="Script" path="res://scripts/interactables/crane.gd" id="1_u4rqo"]
 [ext_resource type="Shader" path="res://others/outline.gdshader" id="2_74d6n"]
-[ext_resource type="Texture2D" uid="uid://dlfcsob0qwwwj" path="res://textures/temp_square.png" id="3_ov4tc"]
+[ext_resource type="Texture2D" uid="uid://cihnlufes3sst" path="res://textures/interactables/sink/toilet_sink.png" id="3_lhr5q"]
+[ext_resource type="Texture2D" uid="uid://ceh3m17j72f0u" path="res://textures/interactables/sink/potop_sink.png" id="3_nlln1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8we6"]
+size = Vector2(48, 80)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhvrs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4xkj"]
 shader = ExtResource("2_74d6n")
 shader_parameter/color = Color(0, 0.525, 1, 0.671)
 shader_parameter/width = 1.0
@@ -15,6 +17,61 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/is_hidden = true
 shader_parameter/alpha = 0.671
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6nga"]
+atlas = ExtResource("3_lhr5q")
+region = Rect2(0, 0, 47, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvb7g"]
+atlas = ExtResource("3_nlln1")
+region = Rect2(0, 0, 47, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwn3v"]
+atlas = ExtResource("3_nlln1")
+region = Rect2(47, 0, 47, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckxkl"]
+atlas = ExtResource("3_nlln1")
+region = Rect2(94, 0, 47, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p03lq"]
+atlas = ExtResource("3_nlln1")
+region = Rect2(141, 0, 47, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tm4h"]
+atlas = ExtResource("3_nlln1")
+region = Rect2(188, 0, 47, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5xsd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6nga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvb7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwn3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckxkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p03lq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tm4h")
+}],
+"loop": true,
+"name": &"potop",
+"speed": 10.0
+}]
 
 [node name="Crane" type="Node2D"]
 script = ExtResource("1_u4rqo")
@@ -25,6 +82,8 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_m8we6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_qhvrs")
-texture = ExtResource("3_ov4tc")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_k4xkj")
+sprite_frames = SubResource("SpriteFrames_f5xsd")
+animation = &"potop"
+frame_progress = 0.164017

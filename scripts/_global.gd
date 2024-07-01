@@ -10,15 +10,6 @@ var info : GameInfo = GameInfo.new()
 var cutscene : bool = false
 var game_paused : bool = false
 
-##============================##
-##         FOR DEBUG          ##
-func _input(event):
-	if Input.is_action_just_pressed("debug"):
-		if game_paused: game_resume()
-		else: game_pause()
-## MUST BE DELETED ON RELEASE ##
-##============================##
-
 func _ready():
 	Engine.max_fps = 60
 	timer = Timer.new()

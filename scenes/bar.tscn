@@ -1,23 +1,36 @@
-[gd_scene load_steps=17 format=3 uid="uid://cv6sfmq3e86db"]
+[gd_scene load_steps=26 format=3 uid="uid://cv6sfmq3e86db"]
 
 [ext_resource type="AudioStream" uid="uid://d3d74wvtq0glx" path="res://sounds/main.mp3" id="1_bnv80"]
 [ext_resource type="PackedScene" uid="uid://cb0ghvmgyn6ft" path="res://scenes/player.tscn" id="1_lpt0y"]
+[ext_resource type="Texture2D" uid="uid://do4w647su4e5d" path="res://textures/back.png" id="1_q8m5t"]
+[ext_resource type="Texture2D" uid="uid://cr2vja5sclf2v" path="res://textures/interactables/barrel.png" id="2_5m8kq"]
+[ext_resource type="Texture2D" uid="uid://eom3l68cdmrs" path="res://textures/toilet_lamp_light.png" id="2_jtu4p"]
 [ext_resource type="PackedScene" uid="uid://dop166ea6pboo" path="res://scenes/hud.tscn" id="2_rm6cy"]
+[ext_resource type="Texture2D" uid="uid://bnesmmtkvigbj" path="res://textures/lamb_light.png" id="2_uj5s0"]
+[ext_resource type="Texture2D" uid="uid://dgvl7tceo8uoe" path="res://textures/toilet_dark.png" id="3_35248"]
 [ext_resource type="PackedScene" uid="uid://bfyr5kefxseww" path="res://scenes/pincode.tscn" id="3_fnpvu"]
 [ext_resource type="PackedScene" uid="uid://b1htxje5u4s1" path="res://scenes/interactables/musicbox.tscn" id="3_iuxkb"]
 [ext_resource type="PackedScene" uid="uid://bo60bdee6rt7" path="res://scenes/gameover.tscn" id="3_qdhgo"]
 [ext_resource type="PackedScene" uid="uid://gr27pe4pva7e" path="res://scenes/laborotory.tscn" id="4_2yd8y"]
 [ext_resource type="PackedScene" uid="uid://db1cj22ikg7ij" path="res://scenes/interactables/bottle.tscn" id="6_8kawm"]
+[ext_resource type="Texture2D" uid="uid://cqf3dr0b31jn8" path="res://textures/interactables/toilet_paiting.png" id="6_n61yv"]
 [ext_resource type="PackedScene" uid="uid://c8vrvrx05jvrh" path="res://scenes/interactables/crane.tscn" id="7_61qn1"]
+[ext_resource type="Texture2D" uid="uid://lhosi02cu8f2" path="res://textures/interactables/paiting_large.png" id="7_w0ji8"]
+[ext_resource type="Texture2D" uid="uid://cjbgjeso1efd8" path="res://textures/interactables/toilet.png" id="8_i2m5j"]
 [ext_resource type="PackedScene" uid="uid://bm0fsqcjbwqyu" path="res://scenes/interactables/smokers.tscn" id="8_n0e4e"]
 [ext_resource type="PackedScene" uid="uid://e3tmvhghcbl3" path="res://scenes/interactables/target.tscn" id="9_q8hab"]
 [ext_resource type="PackedScene" uid="uid://bmitm47ipdqo8" path="res://scenes/interactables/agro.tscn" id="10_vdw1u"]
 [ext_resource type="PackedScene" uid="uid://cah15lhqtj725" path="res://scenes/interactables/bar_man.tscn" id="11_xx1ef"]
 [ext_resource type="PackedScene" uid="uid://4ten5v0xff04" path="res://scenes/interactables/drink.tscn" id="12_tn6rb"]
 [ext_resource type="PackedScene" uid="uid://bb41cyl7cjwbv" path="res://scenes/interactables/bar_table.tscn" id="13_aira8"]
+[ext_resource type="Texture2D" uid="uid://bwq1q8thsc54x" path="res://textures/interactables/shelf.png" id="14_ga4bj"]
 [ext_resource type="PackedScene" uid="uid://jvpuoytugh1x" path="res://scenes/interactables/cleaner.tscn" id="14_x826r"]
 
-[node name="Bar" type="Node2D"]
+[node name="Bar" type="Sprite2D"]
+position = Vector2(1152, 224)
+scale = Vector2(1.694, 1.635)
+texture = ExtResource("1_q8m5t")
+metadata/_edit_lock_ = true
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="." groups=["Music"]]
 stream = ExtResource("1_bnv80")
@@ -32,56 +45,127 @@ visible = false
 
 [node name="GameOver" parent="." instance=ExtResource("3_qdhgo")]
 
+[node name="Barrel" type="Sprite2D" parent="."]
+position = Vector2(-145.809, 84.4037)
+texture = ExtResource("2_5m8kq")
+metadata/_edit_lock_ = true
+
+[node name="ToiletLampLight" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(0.590302, 6.10352e-05)
+texture = ExtResource("2_jtu4p")
+metadata/_edit_lock_ = true
+
+[node name="ToiletDark" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(0.590317, 0.611607)
+texture = ExtResource("3_35248")
+metadata/_edit_lock_ = true
+
+[node name="LambLight" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(4.57764e-05, 0)
+texture = ExtResource("2_uj5s0")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 10
+offset_left = 310.508
+offset_top = -31.1927
+offset_right = 389.508
+offset_bottom = 136.807
+color = Color(0, 0, 0, 0.482353)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 10
+offset_left = -680.0
+offset_top = -31.0
+offset_right = -664.0
+offset_bottom = 137.0
+color = Color(0, 0, 0, 0.482353)
+metadata/_edit_lock_ = true
+
+[node name="ToiletPaiting" type="Sprite2D" parent="."]
+position = Vector2(529.516, -7.33945)
+texture = ExtResource("6_n61yv")
+metadata/_edit_lock_ = true
+
+[node name="PaitingLarge" type="Sprite2D" parent="."]
+position = Vector2(-157.025, -17.737)
+texture = ExtResource("7_w0ji8")
+metadata/_edit_lock_ = true
+
+[node name="Toilet" type="Sprite2D" parent="."]
+position = Vector2(592.68, 77.6758)
+texture = ExtResource("8_i2m5j")
+metadata/_edit_lock_ = true
+
+[node name="Shelf" type="Sprite2D" parent="."]
+position = Vector2(178.276, 44.0367)
+scale = Vector2(1, 1)
+texture = ExtResource("14_ga4bj")
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." instance=ExtResource("1_lpt0y")]
-position = Vector2(-40, 294)
+z_index = 6
+position = Vector2(-730.815, 77.6758)
+border_vector = Vector2(50, 2150)
 
 [node name="Marker2D" type="Marker2D" parent="Player"]
-position = Vector2(248, 10)
+position = Vector2(120.425, 12.844)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 2300
+limit_bottom = 648
+position_smoothing_enabled = true
+editor_draw_limits = true
 
 [node name="Musicbox" parent="." instance=ExtResource("3_iuxkb")]
-position = Vector2(704, 352)
-scale = Vector2(7.76, 9.59)
-
-[node name="Bottle" parent="." instance=ExtResource("6_8kawm")]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(153, 279)
-scale = Vector2(1.013, 3.66)
-
-[node name="Crane" parent="." instance=ExtResource("7_61qn1")]
-position = Vector2(57, 267)
-scale = Vector2(5.995, 5.995)
-
-[node name="Smokers" parent="." instance=ExtResource("8_n0e4e")]
-modulate = Color(0.985074, 0, 0.323411, 1)
-position = Vector2(286, 288)
-scale = Vector2(3.835, 3.835)
-
-[node name="Target" parent="." instance=ExtResource("9_q8hab")]
-modulate = Color(0.952941, 0.239216, 0.290196, 1)
-position = Vector2(378, 284)
-scale = Vector2(2.595, 2.595)
-
-[node name="Agro" parent="." instance=ExtResource("10_vdw1u")]
-position = Vector2(504, 283)
-scale = Vector2(6.185, 2.205)
-
-[node name="BarMan" parent="." instance=ExtResource("11_xx1ef")]
-position = Vector2(1097, 218)
-
-[node name="Marker2D" type="Marker2D" parent="BarMan"]
-position = Vector2(-817, -122)
-
-[node name="Drink" parent="." instance=ExtResource("12_tn6rb")]
-position = Vector2(1037, 211)
-scale = Vector2(1.385, 2.085)
+position = Vector2(17.1193, 59.9388)
 
 [node name="BarTable" parent="." instance=ExtResource("13_aira8")]
-position = Vector2(1096, 269)
-scale = Vector2(8.145, 3.16)
+z_index = 4
+position = Vector2(-508.264, 85.6269)
+
+[node name="Bottle" parent="." instance=ExtResource("6_8kawm")]
+z_index = 2
+position = Vector2(83.8253, 60.5505)
+scale = Vector2(0.425, 0.425)
+
+[node name="Crane" parent="." instance=ExtResource("7_61qn1")]
+position = Vector2(459.858, 74.0061)
+
+[node name="Smokers" parent="." instance=ExtResource("8_n0e4e")]
+position = Vector2(-136.954, 53.8226)
+
+[node name="Target" parent="." instance=ExtResource("9_q8hab")]
+z_index = 5
+position = Vector2(-417.355, 57.4923)
+
+[node name="Agro" parent="." instance=ExtResource("10_vdw1u")]
+z_index = 1
+position = Vector2(105.077, 78.8991)
+
+[node name="BarMan" parent="." instance=ExtResource("11_xx1ef")]
+z_index = 3
+position = Vector2(-537.19, 32.4159)
+run_time = 400
+
+[node name="Marker2D" type="Marker2D" parent="BarMan"]
+position = Vector2(1061.39, 35.474)
+
+[node name="Drink" parent="." instance=ExtResource("12_tn6rb")]
+z_index = 5
+position = Vector2(-456.316, 37.3089)
+scale = Vector2(0.6, 0.6)
 
 [node name="Cleaner" parent="." instance=ExtResource("14_x826r")]
-position = Vector2(930, 269)
-scale = Vector2(3.28, 3.28)
+z_index = 8
+position = Vector2(539.551, 67.2783)
+run_time = 600
 
 [node name="Marker2D" type="Marker2D" parent="Cleaner"]
-position = Vector2(-117.683, -47.8659)
+position = Vector2(-884.297, -23.2416)

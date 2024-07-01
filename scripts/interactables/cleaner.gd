@@ -28,19 +28,21 @@ func _ready():
 func _process(_delta):
 	super(_delta)
 	if running:
+		animated_sprite.play("walking")
+		animated_sprite.flip_h = true
 		if run_speed > 0.0: 
 			global_position.x = \
 			clampf(global_position.x + run_speed, global_position.x, exit_position)
 		else:
 			global_position.x = \
 			clampf(global_position.x + run_speed, exit_position, global_position.x)
-		if global_position.x == exit_position:
+		if round(global_position.x) == round(exit_position):
 			queue_free()
 	else:
 		timer.paused = Global.game_paused
 
 func finished_cleaning():
-	Global.info.cleaner_cleaning = false
+	get_tree().create_timer(2.0).timeout.connect(func(): Global.info.cleaner_cleaning = false)
 	is_interactable = false
 	running = true
 
@@ -54,6 +56,8 @@ func interacted():
 		)
 	elif Global.inventory_item == 5:
 		Global.game_pause()
+		animated_sprite.play("worry")
+		animated_sprite.flip_h = true
 		for line in text:
 			await Global.text_append(line, 0.04)
 			await get_tree().create_timer(0.7).timeout

@@ -34,6 +34,7 @@ func interacted():
 			else:
 				Global.info.flooded = true
 				is_interactable = false
+				animated_sprite.play("potop")
 				Global.text_append(
 					"You [color=aqua]flooded[/color] the toilets, try to use that [color=purple]opportunity[/color]"
 				)
@@ -51,13 +52,10 @@ func interacted():
 				Global.game_pause()
 				Global.info.flooded = true
 				is_interactable = false
+				animated_sprite.play("potop")
 				await Global.text_append(
 					"You [color=aqua]flooded[/color] the toilets...\nIt is time for [color=purple]interigation[/color]",
 					0.03
-				)
-				await get_tree().create_timer(0.5).timeout
-				Global.text_append(
-					"ENDING 5.barman"
 				)
 			elif Global.inventory_item == 1:
 				if Global.info.is_loudly:
@@ -72,6 +70,7 @@ func interacted():
 			else:
 				Global.info.flooded = true
 				is_interactable = false
+				animated_sprite.play("potop")
 				Global.text_append(
 					"You [color=aqua]flooded[/color] the toilets, try to use that [color=purple]opportunity[/color]"
 				)

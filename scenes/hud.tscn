@@ -43,7 +43,6 @@ horizontal_alignment = 1
 
 [node name="InventorySprite" type="Sprite2D" parent="."]
 position = Vector2(96, 552)
-scale = Vector2(6, 6)
 texture = ExtResource("2_8hxky")
 script = ExtResource("3_mbqfo")
 

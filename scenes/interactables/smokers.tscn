@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm0fsqcjbwqyu"]
+[gd_scene load_steps=9 format=3 uid="uid://bm0fsqcjbwqyu"]
 
 [ext_resource type="Script" path="res://scripts/interactables/smokers.gd" id="1_4w6uw"]
 [ext_resource type="Shader" path="res://others/outline.gdshader" id="2_4dhnu"]
-[ext_resource type="Texture2D" uid="uid://dlfcsob0qwwwj" path="res://textures/temp_square.png" id="3_c26oa"]
+[ext_resource type="Texture2D" uid="uid://0e0ytmyv3gww" path="res://textures/interactables/kurit.png" id="2_ignb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8we6"]
+size = Vector2(56, 78)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhvrs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_picba"]
 shader = ExtResource("2_4dhnu")
 shader_parameter/color = Color(0, 0.525, 1, 0.671)
 shader_parameter/width = 1.0
@@ -16,6 +17,28 @@ shader_parameter/add_margins = true
 shader_parameter/is_hidden = true
 shader_parameter/alpha = 0.671
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk4q8"]
+atlas = ExtResource("2_ignb2")
+region = Rect2(0, 0, 64, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy6mb"]
+atlas = ExtResource("2_ignb2")
+region = Rect2(64, 0, 64, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csux1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk4q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy6mb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
 [node name="Smokers" type="Node2D"]
 script = ExtResource("1_4w6uw")
 
@@ -23,8 +46,10 @@ script = ExtResource("1_4w6uw")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_m8we6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_qhvrs")
-texture = ExtResource("3_c26oa")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_picba")
+sprite_frames = SubResource("SpriteFrames_csux1")
+frame_progress = 0.390039

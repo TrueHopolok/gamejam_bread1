@@ -26,6 +26,8 @@ func _process(_delta):
 	if Global.current_level == 1:
 		is_interactable = Global.info.talked_with_target
 	if Global.info.flooded && !run_away:
+		if animated_sprite.get_animation() == "default": position.y += 50
+		animated_sprite.play("running")
 		is_interactable = false
 		if run_speed > 0.0: 
 			global_position.x = \
@@ -33,7 +35,9 @@ func _process(_delta):
 		else:
 			global_position.x = \
 			clampf(global_position.x + run_speed, toilets_position, global_position.x)
-		if global_position.x == toilets_position:
+		if round(global_position.x) == round(toilets_position):
+			animated_sprite.play("worry")
+			animated_sprite.flip_h = true
 			run_away = true
 			if Global.current_level == 5 && Global.inventory_item == 2:
 				ending()

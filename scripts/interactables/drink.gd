@@ -15,7 +15,7 @@ var text_bar : Array[String] = \
 "> [color=yellow]MC:[/color] [color=gray]What?? How you?..[/color]",
 "> [color=red]Target:[/color] Dying from the [color=green]poison[/color] you added yourself.",
 "> [color=yellow]MC:[/color] [color=dimgray]What do you mean? I...[/color]",
-"> [color=red]Target:[/color] You're not the first one to try to [color=green]poison[/color] me, and you're not the first whose drinks I've switched.",
+"> [color=red]Target:[/color] You're not the first one to try to [color=green]poison[/color] me, and you're not the first whose drinks I've switched.\n",
 ]
 
 var text_lab : Array[String] = \
