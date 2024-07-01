@@ -3,7 +3,7 @@ extends Interactable
 @onready var regular_music : AudioStream = \
 preload("res://sounds/musicbox.mp3")
 @onready var agro_music : AudioStream = \
-preload("res://sounds/nenravitsja.mp3")
+preload("res://sounds/dislike.mp3")
 
 var first_interaction : bool = true
 
