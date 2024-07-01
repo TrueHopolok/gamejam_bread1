@@ -8,10 +8,12 @@ A young man decided to go to bar and have a drink or two, but is there any purpo
 
 ### Information:
 
-Initialy this project was made for [🍯Devs That Jam 36hr Challenge #3](https://itch.io/jam/devs-that-jam-36hr-challenge-jun24), but our team didn't managed to make it on time.
+Initialy this project was made for [🍯Devs That Jam 36hr Challenge #3](https://itch.io/jam/devs-that-jam-36hr-challenge-jun24).
+
+Unfortunately our team didn't managed to make it on time.
 
 Programming by [me](https://github.com/TrueHopolok).
 
 Art and sound by tommatoo and N__4_you.
 
-Project on [itch.io](https://hopolok.itch.io/60-seconds-to-die)
+Project on [itch.io](https://hopolok.itch.io/60-seconds-to-die).
