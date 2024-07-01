@@ -1,5 +1,7 @@
 extends Interactable
 
+@onready var lab_music : AudioStream = preload("res://sounds/lab.mp3") 
+
 var text_bar : Array[String] = \
 [
 "> [color=yellow]MC:[/color] I'm not from here, I’m from [color=dimgray]Birkenhead[/color]. My city never sleeps, but here... What kind of city do you have here?",
@@ -43,9 +45,13 @@ func interacted():
 			await get_tree().create_timer(0.7).timeout
 		var lab : AnimationPlayer = get_tree().get_first_node_in_group("LaborotoryAnimation")
 		lab.play("fade_to_black")
+		var music_node : AudioStreamPlayer = get_tree().get_first_node_in_group("Music")
+		music_node.stop()
 		await get_tree().create_timer(1.0).timeout
 		lab.play("fade_to_normal")
 		await get_tree().create_timer(1.0).timeout
+		music_node.stream = lab_music
+		music_node.play()
 		for line in text_lab:
 			await Global.text_append(line, 0.04)
 			await get_tree().create_timer(0.7).timeout

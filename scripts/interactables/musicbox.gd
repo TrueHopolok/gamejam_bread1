@@ -1,9 +1,9 @@
 extends Interactable
 
 @onready var regular_music : AudioStream = \
-preload("res://sounds/temp_active.wav")
+preload("res://sounds/musicbox.mp3")
 @onready var agro_music : AudioStream = \
-preload("res://sounds/temp_active.wav")
+preload("res://sounds/nenravitsja.mp3")
 
 var first_interaction : bool = true
 
@@ -18,7 +18,8 @@ func interacted():
 	if music_player == null: return
 	if Global.info.agro_music:
 		music_player.stream = agro_music
-		Global.text_append("Now playing [color=yellow]FishIsGood Battle Theme[/color]")
+		Global.text_append("Now playing [color=yellow]dislike[/color]")
 	else:
 		music_player.stream = regular_music
-		Global.text_append("Now playing [color=yellow]FishIsGood Battle Theme[/color]")
+		Global.text_append("Now playing [color=yellow]melody[/color]")
+	music_player.play()

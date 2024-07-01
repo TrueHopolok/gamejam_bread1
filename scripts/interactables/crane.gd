@@ -5,9 +5,6 @@ func _ready():
 	is_interactable = Global.current_level != 1
 
 func interacted():
-	Global.game_pause()
-	get_tree().get_first_node_in_group("Pincode").visible = true
-	return
 	match Global.current_level:
 		3:
 			if Global.inventory_item != 1:

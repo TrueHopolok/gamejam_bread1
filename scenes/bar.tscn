@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cv6sfmq3e86db"]
+[gd_scene load_steps=17 format=3 uid="uid://cv6sfmq3e86db"]
 
+[ext_resource type="AudioStream" uid="uid://d3d74wvtq0glx" path="res://sounds/main.mp3" id="1_bnv80"]
 [ext_resource type="PackedScene" uid="uid://cb0ghvmgyn6ft" path="res://scenes/player.tscn" id="1_lpt0y"]
-[ext_resource type="AudioStream" uid="uid://bsj11ywcdigon" path="res://sounds/temp_none.wav" id="1_orcfd"]
-[ext_resource type="Script" path="res://scripts/ui/infinite_music.gd" id="1_wnt63"]
 [ext_resource type="PackedScene" uid="uid://dop166ea6pboo" path="res://scenes/hud.tscn" id="2_rm6cy"]
 [ext_resource type="PackedScene" uid="uid://bfyr5kefxseww" path="res://scenes/pincode.tscn" id="3_fnpvu"]
 [ext_resource type="PackedScene" uid="uid://b1htxje5u4s1" path="res://scenes/interactables/musicbox.tscn" id="3_iuxkb"]
@@ -21,8 +20,8 @@
 [node name="Bar" type="Node2D"]
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="." groups=["Music"]]
-stream = ExtResource("1_orcfd")
-script = ExtResource("1_wnt63")
+stream = ExtResource("1_bnv80")
+autoplay = true
 
 [node name="Laboroty" parent="." instance=ExtResource("4_2yd8y")]
 

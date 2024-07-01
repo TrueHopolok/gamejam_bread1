@@ -1,5 +1,7 @@
 extends Interactable
 
+@onready var shot_sfx : AudioStream = preload("res://sounds/shot.mp3")
+
 var text : Array[String] = \
 [
 "> [color=green]???:[/color] Hey ****, that's my bottle",
@@ -36,8 +38,11 @@ func interacted():
 			0.04
 		)
 		await get_tree().create_timer(0.7).timeout
+		var music_player : AudioStreamPlayer = get_tree().get_first_node_in_group("Music")
+		music_player.stream = shot_sfx
+		music_player.play()
 		await Global.text_append(
-			"Even though plan didn't work, this whole situation was really useful. [color=purple]Bartender[/color] has a [color=red]gun[/color].",
+			"Even though plan didn't work, this whole situation was really useful. [color=purple]Bartender[/color] also has a [color=red]gun[/color] under bar counter.",
 			0.04
 		)
 		await get_tree().create_timer(2.5).timeout
