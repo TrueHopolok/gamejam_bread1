@@ -28,21 +28,20 @@ scale = Vector2(3.66879, 2.88)
 texture = ExtResource("1_ndtum")
 
 [node name="Title" type="Label" parent="."]
-offset_left = 192.0
-offset_top = 152.0
-offset_right = 960.0
-offset_bottom = 288.0
+offset_top = 144.0
+offset_right = 1152.0
+offset_bottom = 280.0
 theme = ExtResource("2_wcsln")
 theme_override_font_sizes/font_size = 96
-text = "Project Bread"
+text = "60 seconds to die!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Level1" type="TextureButton" parent="."]
 offset_left = 224.0
-offset_top = 320.0
+offset_top = 304.0
 offset_right = 424.0
-offset_bottom = 420.0
+offset_bottom = 404.0
 focus_mode = 0
 texture_normal = ExtResource("3_88dlb")
 texture_pressed = ExtResource("4_88pfl")
@@ -51,9 +50,9 @@ script = ExtResource("6_tp0b3")
 
 [node name="Level2" type="TextureButton" parent="."]
 offset_left = 472.0
-offset_top = 320.0
+offset_top = 304.0
 offset_right = 672.0
-offset_bottom = 420.0
+offset_bottom = 404.0
 focus_mode = 0
 texture_normal = ExtResource("7_8ipl5")
 texture_pressed = ExtResource("8_vqanl")
@@ -63,9 +62,9 @@ loaded_level = 2
 
 [node name="Level3" type="TextureButton" parent="."]
 offset_left = 736.0
-offset_top = 320.0
+offset_top = 304.0
 offset_right = 936.0
-offset_bottom = 420.0
+offset_bottom = 404.0
 focus_mode = 0
 texture_normal = ExtResource("10_bplx4")
 texture_pressed = ExtResource("11_8cfnu")
@@ -75,9 +74,9 @@ loaded_level = 3
 
 [node name="Level4" type="TextureButton" parent="."]
 offset_left = 344.0
-offset_top = 448.0
+offset_top = 408.0
 offset_right = 544.0
-offset_bottom = 548.0
+offset_bottom = 508.0
 focus_mode = 0
 texture_normal = ExtResource("13_ylnef")
 texture_pressed = ExtResource("14_msyho")
@@ -87,9 +86,9 @@ loaded_level = 4
 
 [node name="Level5" type="TextureButton" parent="."]
 offset_left = 608.0
-offset_top = 448.0
+offset_top = 408.0
 offset_right = 808.0
-offset_bottom = 548.0
+offset_bottom = 508.0
 focus_mode = 0
 texture_normal = ExtResource("16_876sw")
 texture_pressed = ExtResource("17_oycsy")
